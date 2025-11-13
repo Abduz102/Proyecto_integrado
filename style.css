@@ -1,0 +1,169 @@
+body {
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background-color: #070505;
+    box-sizing: border-box;
+}
+
+.cabezado {
+    background-image: url('img/ꕤ\ WELCOME\ ꕤ.jpeg'); 
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    height: 21.875rem; 
+    position: relative; 
+}
+
+/*Se implementa una fuenta externa para el titulo*/
+ @font-face {
+        font-family: fuenteTitulo;
+        src: url(font/FortalesiaScript_PERSONAL_USE_ONLY.otf);
+    }
+
+/*Este es el estilo del titulo y barra de navegacion*/
+.titulo {
+    font-family: fuenteTitulo;
+    color: white;
+    font-size: 30px; 
+    margin: 10px;
+    font-size: 80px;
+}
+
+.navbar {
+    /* Posicionamiento en la parte inferior de la imagen */
+    position: absolute; 
+    bottom: 0;          
+    width: 100%;        
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    padding-top: .3125rem;   
+    padding-bottom: .3125rem; 
+    border-top: .0625rem solid rgba(255, 255, 255, 0.15);
+}
+
+/* Título de la Biblioteca */
+.navbar-brand {
+    color: #FFF !important; 
+    font-size: 24px; 
+    margin-right: 1.875rem; 
+}
+
+/* Enlaces del Menú */
+.navbar .nav-link {
+    color: #F0F0F0 !important;
+    font-size: 15.2px; 
+    padding: .625rem .9375rem !important; 
+}
+
+/* Efecto al pasar el ratón */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd700 !important;
+}
+
+/* estilo Menu */
+.navbar .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9); 
+    border: none;
+}
+.navbar .dropdown-item {
+    color: #F0F0F0 !important;
+}
+.navbar .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #ffd700 !important;
+}
+
+/* Formulario de Búsqueda */
+.navbar .form-control {
+    height: 1.875rem; 
+    font-size: 14.4px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white; 
+}
+.navbar .btn-outline-success {
+    height: 1.875rem;
+    font-size: 14.4px;
+    padding: 0 .625rem;
+}
+
+/*Esto es para el estilo del primer texto y su primera img*/
+.container {
+    margin-top: 2.5rem; 
+    margin-bottom: 2.5rem;
+    color: aliceblue;
+}
+
+.col img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: .625rem;
+    margin: 0 auto; 
+    height: 37.5rem;
+}
+
+/*Stilo del segundo parrafos con una img*/
+
+.contenedor {
+    text-align: center;
+}
+
+.contenedor .imgdos img{
+    text-align: center;
+    width: 31.25rem;
+    height: 31.25rem;
+}
+
+/*Estilo de carta de presentacion*/
+
+.presentation-card {
+    /* Fondo de la tarjeta: un gris oscuro que contrasta con el fondo negro */
+    background-color: #2c2c2c; 
+    border: .0625rem solid #444444; 
+    border-radius: .5rem; 
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.5); 
+    height: 100%; 
+}
+
+.presentation-card .card-body {
+    color: #F8F8F8; 
+}
+
+/* Color del título */
+.presentation-card .card-title {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/*Estilo del boton*/
+.presentation-card .btn-primary {
+    background-color: #ffd700; 
+    border-color: #ffd700;
+    color: #000000; 
+    font-weight: 600;
+}
+
+.presentation-card .btn-primary:hover {
+    background-color: #e6c200; 
+    border-color: #e6c200;
+}
+
+/* Asegura que la imagen se vea bien y tenga una altura uniforme */
+.presentation-card .card-img-top {
+    height: 200px; 
+    object-fit: cover;
+}
+
+h3{
+    text-align: center;
+    color: #e6c200;
+}
+
+footer{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif cursive;
+    line-height: 8px;
+}
