@@ -1,0 +1,109 @@
+package biblioteca;
+
+import java.util.Scanner;
+
+public class biblioteca {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int opciondeMenuPrincipal = 0;
+        int menuAdmin = 0;
+        int crudCliente = 0;
+        int crudServicios = 0;
+        int menuCliente = 0;
+        int cliente = 0;
+        int maximClientes = 1000; // aqui estoy diciendo que la capacidad maxima de clientes a registrar es 1000
+        String [] nombres = new String[maximClientes];
+        String [] apellidos = new String[maximClientes];
+        long [] cedulas = new long[maximClientes];
+        long [] telefonos = new long[maximClientes];
+
+
+     // mensaje de bienvenida a la libreria y opcion de que usuario ingresara.
+      while (opciondeMenuPrincipal !=2 ){
+
+          System.out.println(" BIENVENIDOS A LA LIBRERIA EL SABER");
+          System.out.println(" ----------------------------------\n");
+          System.out.println("¿Quien va a ingresar?\n");
+          System.out.println("""
+                1. Administrador.
+                2. Cliente.
+                """);
+
+          opciondeMenuPrincipal = sc.nextInt();
+
+          switch (opciondeMenuPrincipal){
+              case 1:
+                  menuAdmin = 0;
+
+                  while (menuAdmin !=3){
+                      System.out.println("""
+                              Bienvenido Sr@. Administrador. ¿que desea realizar hoy?
+                              
+                              1. CRUD Clientes.
+                              2. CRUD Servicios.
+                              3. Volver al Menú Principal.
+                              """);
+                      menuAdmin = sc.nextInt();
+
+                      switch (menuAdmin){
+                          case 1:
+                              crudCliente = 0;
+
+                              while (crudCliente !=5){
+                                  System.out.println("""
+                                          ¿Que desea realizar?
+                                          
+                                          1. Agregar Cliente.
+                                          2. Buscar Cliente.
+                                          3. Eliminar Cliente.
+                                          4. Modificar Cliente.
+                                          5. volver.
+                                          """);
+                                  crudCliente = sc.nextInt();
+
+                                  switch (crudCliente){
+                                      case 1: //Agregar a un cliente
+                                          sc.nextLine();
+                                          System.out.println("Ingrese el nombre del cliente: ");
+                                          nombres[cliente] = sc.nextLine();
+                                          System.out.println("Ingrese el Apellido del cliente: ");
+                                          apellidos [cliente] = sc.nextLine();
+                                          System.out.println("Ingrese la Cedula del cliente :");
+                                          cedulas [cliente] = sc.nextLong();
+                                          System.out.println("Ingrese el numero telefonico del cliente: ");
+                                          telefonos [cliente] = sc.nextLong();
+
+                                          cliente++;
+
+                                          System.out.println("Ha sido registrado Éxitosamente.");
+                                          break;
+
+                                      case 2: // Buscar a un cliente
+                                          sc.nextLine();
+                                          System.out.println("Ingrese el nombre del cliente que desea buscar: ");
+
+                                          for ( int i = 0; i < cliente; i++){
+                                              if (nombres [i].equals(nombres[i])){
+
+                                                  System.out.println("CLIENTE ENCONTRADO\n");
+                                                  System.out.println("Nombre: " + nombres[i]);
+                                                  System.out.println("Apellidos: " + apellidos[i]);
+                                                  System.out.println("Cedula: " + cedulas[i]);
+                                                  System.out.println("Telefono: " + telefonos[i]);
+                                                  break;
+                                              } else {
+                                                  System.out.println("Cliente no encontrado.");
+                                              }
+                                          }
+                                      case 3:
+
+                                  }
+                              }
+
+                      }
+                  }
+
+          }
+
+      }
