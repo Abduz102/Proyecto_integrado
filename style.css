@@ -30,9 +30,9 @@ body {
 .titulo {
     font-family: fuenteTitulo;
     color: white;
-    font-size: 30px; 
-    margin: 10px;
-    font-size: 80px;
+    font-size: 1.875rem; 
+    margin: .625rem;
+    font-size: 5rem;
 }
 
 .navbar {
@@ -50,14 +50,14 @@ body {
 /* Título de la Biblioteca */
 .navbar-brand {
     color: #FFF !important; 
-    font-size: 24px; 
+    font-size: 1.5rem; 
     margin-right: 1.875rem; 
 }
 
 /* Enlaces del Menú */
 .navbar .nav-link {
     color: #F0F0F0 !important;
-    font-size: 15.2px; 
+    font-size: .95rem; 
     padding: .625rem .9375rem !important; 
 }
 
@@ -83,14 +83,14 @@ body {
 /* Formulario de Búsqueda */
 .navbar .form-control {
     height: 1.875rem; 
-    font-size: 14.4px; 
+    font-size: .9rem; 
     background-color: rgba(255, 255, 255, 0.1); 
     border-color: rgba(255, 255, 255, 0.3);
     color: white; 
 }
 .navbar .btn-outline-success {
     height: 1.875rem;
-    font-size: 14.4px;
+    font-size: .9rem;
     padding: 0 .625rem;
 }
 
@@ -158,7 +158,7 @@ body {
 
 /* Asegura que la imagen se vea bien y tenga una altura uniforme */
 .presentation-card .card-img-top {
-    height: 200px; 
+    height: 12.5rem; 
     object-fit: cover;
 }
 
@@ -170,7 +170,7 @@ h1{
 #pie footer{
     text-align: center;
     font-family: 'Times New Roman', Times, serif cursive;
-    line-height: 8px;
+    line-height: .5rem;
     color: #F8F8F8;
 }
 
@@ -184,16 +184,16 @@ h3{
 /*Aca empieza el estilo de la pagina de servicios y productos*/
 
 #servicios {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 56.25rem;
+    margin: 2.5rem auto;
+    padding: 0 1.25rem;
 }
 
 /* Estilo para el encabezado principal de la sección */
 #servicios h2 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 28px;
+    margin-bottom: 1.875rem;
+    font-size: 1.75rem;
    }
 
 /* Estilo para el párrafo introductorio (el que dice "Más que libros...") */
@@ -207,10 +207,10 @@ h3{
 .servicio-bloque {
     background-color: #ffffff; 
     border: 1px solid #e0e0e0;
-    border-radius: 8px; 
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: .5rem; 
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 .125rem .3125rem rgba(0, 0, 0, 0.05);
     transition: transform 0.3s; 
 }
 
@@ -222,9 +222,9 @@ h3{
 
 .servicio-bloque h3 {
     color: #2980b9;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-top: 0;
-    border-bottom: 1px dashed #eee;
+    border-bottom: .0625rem dashed #eee;
 }
 
 /* Estilo para el texto dentro del servicio */
@@ -243,28 +243,28 @@ p{
 
 .p{
     text-align: left;
-    margin: 40px;
+    margin: 2.5rem;
 }
 
 /* estilo para el formulario */
 .formulario-contacto {
     width: 90%; 
-    max-width: 600px; 
+    max-width: 37.5rem; 
     margin-left: 0; 
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .formulario-contacto label {
     font-size: 1.3em; 
     color: yellow; 
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: .9375rem;
+    margin-bottom: .3125rem;
 }
 
 .formulario-contacto input:not([type="submit"]) {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: .75rem;
+    margin-bottom: 1.25rem;
     box-sizing: border-box;
 }
 
@@ -272,10 +272,10 @@ p{
     width: 100%;
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin-top: 10px;
+    padding: .875rem 1.25rem;
+    margin-top: .625rem;
     border: none;
-    border-radius: 4px;
+    border-radius: .25rem;
     font-size: 1.2em;
 }
 
@@ -289,20 +289,20 @@ section h2{
 /*aplicar estilo en la img y agregarle el display al contenedor padre*/
 .imagenServicios img{
     display: flex;
-    height: 500px;
+    height: 31.25rem;
 }
 
 .formula {
     display: flex; 
     align-items: flex-start;
-    gap: 40px;  
-    margin: 30px auto; 
-    max-width: 1200px;
+    gap: 2.5rem;  
+    margin: 1.875rem auto; 
+    max-width: 75rem;
 }
 
 /*Aca se modifica el estilo de la tercera pagina*/
 
 .base pre{
     color: #e0e0e0;
-    font-size: 15px;
+    font-size: .9375rem;
 }
