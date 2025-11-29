@@ -12,98 +12,228 @@ public class biblioteca {
         int crudServicios = 0;
         int menuCliente = 0;
         int cliente = 0;
-        int maximClientes = 1000; // aqui estoy diciendo que la capacidad maxima de clientes a registrar es 1000
-        String [] nombres = new String[maximClientes];
-        String [] apellidos = new String[maximClientes];
-        long [] cedulas = new long[maximClientes];
-        long [] telefonos = new long[maximClientes];
+        int maximClientes = 10;
+        String[] nombres = new String[maximClientes];
+        String[] apellidos = new String[maximClientes];
+        long[] cedulas = new long[maximClientes];
+        long[] telefonos = new long[maximClientes];
+        int maxServicios = 10;
+        int totalServicios = 0;
+        String[] serviciosNombres = new String[maxServicios];
+        String nombre; // Variable auxiliar
+        String[] buscar = new String[nombres.length];
 
+        // INICIO DO-WHILE PRINCIPAL
+        do {
+            System.out.println("\n BIENVENIDOS A LA BIBLIOTECA EL SABER");
+            System.out.println(" ----------------------------------\n");
+            System.out.println("¿Quien va a ingresar?\n");
+            System.out.println("""
+                    1. Administrador.
+                    2. Cliente.
+                    3. Salir.
+                    """);
 
-     // mensaje de bienvenida a la libreria y opcion de que usuario ingresara.
-      while (opciondeMenuPrincipal !=2 ){
+            opciondeMenuPrincipal = sc.nextInt();
 
-          System.out.println(" BIENVENIDOS A LA LIBRERIA EL SABER");
-          System.out.println(" ----------------------------------\n");
-          System.out.println("¿Quien va a ingresar?\n");
-          System.out.println("""
-                1. Administrador.
-                2. Cliente.
-                """);
+            switch (opciondeMenuPrincipal) {
+                case 1: // MENU ADMINISTRADOR
+                    do {
+                        System.out.println("""
+                                \nBienvenido Sr@. Administrador. ¿que desea realizar hoy?
+                                
+                                1. CRUD Clientes.
+                                2. CRUD Servicios.
+                                3. Volver al Menú Principal.
+                                """);
+                        menuAdmin = sc.nextInt();
 
-          opciondeMenuPrincipal = sc.nextInt();
+                        switch (menuAdmin) {
+                            case 1: // CRUD CLIENTES
+                                do {
+                                    System.out.println("""
+                                            \n¿Que desea realizar?
+                                            
+                                            1. Agregar Cliente.
+                                            2. Buscar Cliente.
+                                            3. Eliminar Cliente.
+                                            4. Modificar Cliente.
+                                            5. Volver.
+                                            """);
+                                    crudCliente = sc.nextInt();
 
-          switch (opciondeMenuPrincipal){
-              case 1:
-                  menuAdmin = 0;
+                                    switch (crudCliente) {
+                                        case 1: // Agregar
+                                            sc.nextLine();
+                                            System.out.println("Ingrese el nombre del cliente: ");
+                                            nombres[cliente] = sc.nextLine();
+                                            System.out.println("Ingrese el Apellido del cliente: ");
+                                            apellidos[cliente] = sc.nextLine();
+                                            System.out.println("Ingrese la Cedula del cliente :");
+                                            cedulas[cliente] = sc.nextLong();
+                                            System.out.println("Ingrese el numero telefonico del cliente: ");
+                                            telefonos[cliente] = sc.nextLong();
+                                            cliente++;
+                                            System.out.println("Ha sido registrado Éxitosamente.");
+                                            break;
 
-                  while (menuAdmin !=3){
-                      System.out.println("""
-                              Bienvenido Sr@. Administrador. ¿que desea realizar hoy?
-                              
-                              1. CRUD Clientes.
-                              2. CRUD Servicios.
-                              3. Volver al Menú Principal.
-                              """);
-                      menuAdmin = sc.nextInt();
+                                        case 2: // Buscar
+                                            sc.nextLine();
+                                            System.out.println("Ingrese el nombre del cliente que desea buscar:");
+                                            String nombreBuscado = sc.nextLine();
+                                            boolean encontrado = false;
 
-                      switch (menuAdmin){
-                          case 1:
-                              crudCliente = 0;
+                                            for (int i = 0; i < cliente; i++) {
+                                                if (nombreBuscado.equalsIgnoreCase(nombres[i])) {
 
-                              while (crudCliente !=5){
-                                  System.out.println("""
-                                          ¿Que desea realizar?
-                                          
-                                          1. Agregar Cliente.
-                                          2. Buscar Cliente.
-                                          3. Eliminar Cliente.
-                                          4. Modificar Cliente.
-                                          5. volver.
-                                          """);
-                                  crudCliente = sc.nextInt();
+                                                    System.out.println("CLIENTE ENCONTRADO\n");
+                                                    System.out.println("Nombre: " + nombres[i]);
+                                                    System.out.println("Apellidos: " + apellidos[i]);
+                                                    System.out.println("Cedula: " + cedulas[i]);
+                                                    System.out.println("Telefono: " + telefonos[i]);
+                                                    encontrado = true;
+                                                    break;
+                                                }
+                                            }
+                                            if (!encontrado) {
+                                                System.out.println("Cliente no encontrado.");
+                                            }
+                                            break; 
 
-                                  switch (crudCliente){
-                                      case 1: //Agregar a un cliente
-                                          sc.nextLine();
-                                          System.out.println("Ingrese el nombre del cliente: ");
-                                          nombres[cliente] = sc.nextLine();
-                                          System.out.println("Ingrese el Apellido del cliente: ");
-                                          apellidos [cliente] = sc.nextLine();
-                                          System.out.println("Ingrese la Cedula del cliente :");
-                                          cedulas [cliente] = sc.nextLong();
-                                          System.out.println("Ingrese el numero telefonico del cliente: ");
-                                          telefonos [cliente] = sc.nextLong();
+                                        case 3: // Eliminar
+                                            System.out.println("Ingrese el nombre del cliente que desea eliminar: ");
+                                            sc.nextLine();
+                                            nombre = sc.nextLine(); // Usamos la variable auxiliar declarada arriba
+                                            String nomElim = sc.nextLine();
 
-                                          cliente++;
+                                            for (int i = 0; i < nombres.length; i++) {
+                                                if (nombres[i] != null && nombres[i].equalsIgnoreCase(nomElim)) {
+                                                    nombres[i] = "";
+                                                    apellidos[i] = "";
+                                                    cedulas[i] = 0;
+                                                    telefonos[i] = 0;
+                                                    System.out.println("Cliente eliminado con éxito.");
+                                                }
+                                            }
+                                            break;
 
-                                          System.out.println("Ha sido registrado Éxitosamente.");
-                                          break;
+                                        case 4: // Modificar
+                                            sc.nextLine();
+                                            System.out.println("Ingrese el nombre del cliente que desea modificar: ");
+                                            String nombreModificar = sc.nextLine();
 
-                                      case 2: // Buscar a un cliente
-                                          sc.nextLine();
-                                          System.out.println("Ingrese el nombre del cliente que desea buscar: ");
+                                            for (int i = 0; i < nombres.length; i++) {
+                                                if (nombres[i] != null && nombres[i].equalsIgnoreCase(nombreModificar)) {
+                                                    System.out.println("Nuevo nombre: ");
+                                                    nombres[i] = sc.nextLine();
+                                                    System.out.println("Nuevo apellido: ");
+                                                    apellidos[i] = sc.nextLine();
+                                                    System.out.println("Nueva cedula: ");
+                                                    cedulas[i] = sc.nextLong();
+                                                    System.out.println("Nuevo telefono: ");
+                                                    telefonos[i] = sc.nextLong();
+                                                    sc.nextLine();
+                                                    System.out.println("Cliente modificado con exito.");
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                    }
+                                } while (crudCliente != 5);
+                                break;
 
-                                          for ( int i = 0; i < cliente; i++){
-                                              if (nombres [i].equals(nombres[i])){
+                            case 2: // CRUD SERVICIOS
+                                do {
+                                    System.out.println("""
+                                            \n¿Que desea realizar en servicios?
+                                            
+                                            1. Agregar servicios.
+                                            2. Ver servicios.
+                                            3. Eliminar servicios.
+                                            4. Volver.
+                                            """);
+                                    crudServicios = sc.nextInt();
 
-                                                  System.out.println("CLIENTE ENCONTRADO\n");
-                                                  System.out.println("Nombre: " + nombres[i]);
-                                                  System.out.println("Apellidos: " + apellidos[i]);
-                                                  System.out.println("Cedula: " + cedulas[i]);
-                                                  System.out.println("Telefono: " + telefonos[i]);
-                                                  break;
-                                              } else {
-                                                  System.out.println("Cliente no encontrado.");
-                                              }
-                                          }
-                                      case 3:
+                                    switch (crudServicios) {
+                                        case 1: // Agregar
+                                            sc.nextLine();
+                                            System.out.println("Nombre del servicio: ");
+                                            serviciosNombres[totalServicios] = sc.nextLine();
+                                            totalServicios++;
+                                            System.out.println("Servicio agregado éxitosamente. ");
+                                            break;
 
-                                  }
-                              }
+                                        case 2: // Ver
+                                            System.out.println("Esta es su lista de los servicios. ");
+                                            for (int i = 0; i < totalServicios; i++) {
+                                                System.out.println((i + 1) + "." + serviciosNombres[i]);
+                                            }
+                                            break;
 
-                      }
-                  }
+                                        case 3: // Eliminar
+                                            sc.nextLine();
+                                            System.out.println("Ingrese el nombre del servicio que desea eliminar: ");
+                                            String servEliminar = sc.nextLine();
 
-          }
+                                            for (int i = 0; i < totalServicios; i++) {
+                                                if (serviciosNombres[i].equals(servEliminar)) {
+                                                    for (int y = i; y < totalServicios - 1; y++) {
+                                                        serviciosNombres[y] = serviciosNombres[y + 1];
+                                                    }
+                                                    totalServicios--;
+                                                    System.out.println("Servicio eliminado correctamente.");
+                                                    break;
+                                                } else {
+                                                    System.out.println("Servicio no encontrado.");
+                                                }
+                                            }
+                                            break;
+                                    }
+                                } while (crudServicios != 4);
+                                break;
+                        }
+                    } while (menuAdmin != 3); // FIN DO-WHILE MENU ADMIN
+                    break;
 
-      }
+                case 2: // MENU CLIENTE
+                    do {
+                        System.out.println("""
+                                \n¿Que deseas realizar el dia de hoy?
+                                
+                                1. Registrarte.
+                                2. Iniciar Sesión.
+                                3. Volver al menú inicial.
+                                """);
+                        menuCliente = sc.nextInt();
+
+                        switch (menuCliente) {
+                            case 1: // Registrarse
+                                sc.nextLine();
+                                System.out.println("Ingrese sus nombre: ");
+                                nombres[cliente] = sc.nextLine();
+                                System.out.println("Ingrese sus apellidos: ");
+                                apellidos[cliente] = sc.nextLine();
+                                System.out.println("Ingrese su número de cedula: ");
+                                cedulas[cliente] = sc.nextLong();
+                                System.out.println("Ingrese su numero telefonico: ");
+                                telefonos[cliente] = sc.nextLong();
+                                cliente++;
+                                System.out.println(" Se a Registrado correctamente.");
+                                break;
+                            case 2:
+                                System.out.println("Modulo en construccion...");
+                                break;
+                        }
+                    } while (menuCliente != 3); // FIN DO-WHILE MENU CLIENTE
+                    break;
+
+                case 3:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida");
+            }
+        } while (opciondeMenuPrincipal != 3); // FIN DO-WHILE PRINCIPAL
+    }
+}
