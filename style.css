@@ -174,7 +174,69 @@ h1{
     color: #F8F8F8;
 }
 
+h3{
+    text-align: center;
+    color: yellow;
+}
+
+
+
 /*Aca empieza el estilo de la pagina de servicios y productos*/
+
+#servicios {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Estilo para el encabezado principal de la sección */
+#servicios h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+   }
+
+/* Estilo para el párrafo introductorio (el que dice "Más que libros...") */
+#servicios > p {
+    text-align: center;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.servicio-bloque {
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; 
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s; 
+}
+
+/* Efecto al pasar el mouse */
+.servicio-bloque:hover {
+    transform: translateY(-3px); /* Se levanta ligeramente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-bloque h3 {
+    color: #2980b9;
+    font-size: 20px;
+    margin-top: 0;
+    border-bottom: 1px dashed #eee;
+}
+
+/* Estilo para el texto dentro del servicio */
+.servicio-bloque p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+
+
 p{
     color: #F8F8F8;
 }
@@ -189,7 +251,7 @@ p{
     width: 90%; 
     max-width: 600px; 
     margin-left: 0; 
-    padding: 20px; 
+    padding: 20px;
 }
 
 .formulario-contacto label {
@@ -222,4 +284,25 @@ section h2{
     text-align: left;
     color: yellow;
     margin: 10px 0px 10px 30px;
+}
+
+/*aplicar estilo en la img y agregarle el display al contenedor padre*/
+.imagenServicios img{
+    display: flex;
+    height: 500px;
+}
+
+.formula {
+    display: flex; 
+    align-items: flex-start;
+    gap: 40px;  
+    margin: 30px auto; 
+    max-width: 1200px;
+}
+
+/*Aca se modifica el estilo de la tercera pagina*/
+
+.base pre{
+    color: #e0e0e0;
+    font-size: 15px;
 }
